@@ -2,3 +2,5 @@
 .godot/
 /android/
 addons/gdai-mcp-plugin-godot/
+# Copias temporales que crea Godot al recargar extensiones
+~*.dll

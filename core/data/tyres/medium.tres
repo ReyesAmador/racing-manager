@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TyreCompound" format=3 uid="uid://bdmongm6ewtet"]
+
+[ext_resource type="Script" uid="uid://c85edfa51fr2k" path="res://core/resources/res_tyre_compound.gd" id="1_qjeir"]
+
+[resource]
+script = ExtResource("1_qjeir")
+grip_bonus = 0.5
+metadata/_custom_type_script = "uid://c85edfa51fr2k"

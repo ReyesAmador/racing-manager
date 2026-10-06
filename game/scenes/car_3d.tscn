@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bd2571kym8rpr"]
+
+[ext_resource type="Script" uid="uid://ddwlojk5iy5xc" path="res://game/scripts/car_3d.gd" id="1_epqum"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_car"]
+size = Vector3(0.25, 0.12, 0.7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_car"]
+size = Vector3(0.25, 0.12, 0.7)
+
+[node name="Car3D" type="AnimatableBody3D" unique_id=1253256141 groups=["car"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_epqum")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=2004473143]
+mesh = SubResource("BoxMesh_car")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=706266844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+shape = SubResource("BoxShape3D_car")
+
+[node name="PitTimer" type="Timer" parent="." unique_id=853051661]
+one_shot = true
+
+[connection signal="timeout" from="PitTimer" to="." method="_on_pit_timer_timeout"]

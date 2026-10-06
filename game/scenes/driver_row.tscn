@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cw1rsag13n1ce"]
+
+[ext_resource type="Script" uid="uid://832avjekchep" path="res://game/scripts/driver_row.gd" id="1_tgm51"]
+
+[node name="DriverRow" type="Button" unique_id=2015641954]
+custom_minimum_size = Vector2(0, 40)
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_tgm51")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=345804313]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PosLabel" type="Label" parent="HBoxContainer" unique_id=859691890]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "1º"
+
+[node name="NameLabel" type="Label" parent="HBoxContainer" unique_id=144589197]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Piloto"
+
+[node name="TimeLabel" type="Label" parent="HBoxContainer" unique_id=828709190]
+unique_name_in_owner = true
+layout_mode = 2
+text = "--"
+
+[node name="TyreColor" type="ColorRect" parent="HBoxContainer" unique_id=132821084]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="WearLabel" type="Label" parent="HBoxContainer" unique_id=459536979]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100%"

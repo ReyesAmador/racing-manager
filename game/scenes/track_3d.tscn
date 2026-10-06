@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://ddbjwemjs42vh"]
+
+[ext_resource type="Script" uid="uid://bvwkn1b76hcco" path="res://game/scripts/track_3d.gd" id="1_6d0ef"]
+[ext_resource type="Script" uid="uid://bgs6wxjosy2nm" path="res://game/scripts/track_camera.gd" id="2_kcqki"]
+[ext_resource type="Script" uid="uid://ci8xn0eb7haw6" path="res://core/resources/res_strategy.gd" id="2_oybeq"]
+[ext_resource type="PackedScene" uid="uid://dr6qj7l8h0m5a" path="res://game/scenes/race_hud.tscn" id="3_0eydo"]
+[ext_resource type="Resource" uid="uid://hywtg6emapwh" path="res://core/data/strategies/one_stop.tres" id="3_lkfof"]
+[ext_resource type="Resource" uid="uid://b88kjpma457hn" path="res://core/data/strategies/two_stops.tres" id="4_mpqbk"]
+[ext_resource type="Script" uid="uid://o7umwmgyolwx" path="res://game/scripts/track_sector.gd" id="6_lkfof"]
+
+[sub_resource type="Curve3D" id="Curve3D_kcqki"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3.4763145, 0, 31.990349, 0, 0, 0, 0, 0, 0, -52.996048, 0, 31.9112, 0, 0, 0, 0, 0, 0, -59.64169, -0.117862225, 32.12425, 0.82705975, -0.30552864, 0.67026615, -0.82705975, 0.30552864, -0.67026615, -62.288292, 0, 30.672443, 0, 0, 0, 0, 0, 0, -63.612816, 0, 28.727064, 0, 0, 0, 0, 0, 0, -64.068115, 0, 25.995256, 0, 0, 0, 0, 0, 0, -64.068115, 0, 22.145891, 0, 0, 0, 0, 0, 0, -64.895935, 0, 19.662432, 0, 0, 0, 0, 0, 0, -66.51018, 0, 17.675661, 0, 0, 0, 0, 0, 0, -68.82808, 0, 16.30976, 0, 0, 0, 0, 0, 0, -70.9646, 0, 15.3573, 0, 0, 0, 0, 0, 0, -77.25604, 0, 13.163575, 0, 0, 0, 0, 0, 0, -80.44315, 0, 11.756281, 0, 0, 0, 0, 0, 0, -82.80244, 0, 10.100639, 0, 0, 0, 0, 0, 0, -84.41669, 0, 8.031089, 0, 0, 0, 0, 0, 0, -86.030945, 0, 5.3820634, 0, 0, 0, 0, 0, 0, -87.179634, 0, 2.0200415, 0, 0, 0, 0, 0, 0, -87.38659, 0, -1.746542, 0, 0, 0, 0, 0, 0, -86.351814, 0, -5.554515, 0, 0, 0, 0, 0, 0, -84.65478, 0, -8.865797, 0, 0, 0, 0, 0, 0, -82.46105, 0, -11.514822, 0, 0, 0, 0, 0, 0, -78.791794, 0, -14.444206, 0, 0, 0, 0, 0, 0, -74.90104, 0, -16.348194, 0, 0, 0, 0, 0, 0, -70.09968, 0, -17.921051, 0, 0, 0, 0, 0, 0, -65.54666, 0, -18.6247, 0, 0, 0, 0, 0, 0, -59.961147, 0, -18.682926, 0, 0, 0, 0, 0, 0, -34.133152, 0, -18.848492, 0, 0, 0, 0, 0, 0, -30.297684, 0, -17.367352, 0, 0, 0, 0, 0, 0, -28.517874, 0, -15.049456, 0, 0, 0, 0, 0, 0, -27.690052, 0, -11.945128, 0, 0, 0, 0, 0, 0, -27.897005, 0, -9.99975, 0, 0, 0, 0, 0, 0, -28.807606, 0, -7.1437683, 0, 0, 0, 0, 0, 0, -29.966557, 0, -5.405345, 0, 0, 0, 0, 0, 0, -32.000866, 0, -3.4554372, 0, 0, 0, 0, 0, 0, -35.146584, 0, -1.5100582, 0, 0, 0, 0, 0, 0, -39.52557, 0, -0.31194115, 0, 0, 0, 0, 0, 0, -43.167984, 0, -0.22915863, 0, 0, 0, 0, 0, 0, -63.284016, 0, -0.4361155, 0, 0, 0, 0, 0, 0, -66.11886, 0, 0.76766497, 0, 0, 0, 0, 0, 0, -67.443375, 0, 2.2991333, 0, 0, 0, 0, 0, 0, -67.69172, 0, 4.327294, 0, 0, 0, 0, 0, 0, -66.86389, 0, 6.686582, 0, 0, 0, 0, 0, 0, -49.028927, 0, 18.71356, 0, 0, 0, 0, 0, 0, -44.186176, 0, 20.534763, 0, 0, 0, 0, 0, 0, -39.177097, 0, 21.519518, 0, 0, 0, 0, 0, 0, -34.086002, 0, 21.850645, 0, 0, 0, 0, 0, 0, -25.849186, 0, 21.809256, 0, 0, 0, 0, 0, 0, -23.15877, 0, 21.229782, 0, 0, 0, 0, 0, 0, -21.337566, 0, 19.698315, 0, 0, 0, 0, 0, 0, -20.344181, 0, 17.173462, 0, 0, 0, 0, 0, 0, -20.330122, 0, 11.316999, 0, 0, 0, 0, 0, 0, -19.12978, 0, 7.881544, 0, 0, 0, 0, 0, 0, -5.096009, 0, -12.497035, 0, 0, 0, 0, 0, 0, -0.5028844, 0, -15.638687, 0, 0, 0, 0, 0, 0, 3.0567455, 0, -16.342337, 0, 0, 0, 0, 0, 0, 7.1130657, 0, -15.72147, 0, 0, 0, 0, 0, 0, 12.162771, 0, -13.32079, 0, 0, 0, 0, 0, 0, 62.605515, 0, 16.792915, 0, 0, 0, 0, 0, 0, 65.337326, 0, 17.537954, 0, 0, 0, 0, 0, 0, 67.531044, 0, 16.710133, 0, 0, 0, 0, 0, 0, 68.97974, 0, 14.806148, 0, 0, 0, 0, 0, 0, 69.22808, 0, 11.205129, 0, 0, 0, 0, 0, 0, 68.77278, 0, 8.514711, 0, 0, 0, 0, 0, 0, 67.075745, 0, 5.162037, 0, 0, 0, 0, 0, 0, 64.38533, 0, 2.0991013, 0, 0, 0, 0, 0, 0, 60.780327, 0, 0.05216457, 0, 0, 0, 0, 0, 0, 54.364716, 0, -2.5554693, 0, 0, 0, 0, 0, 0, 52.709076, 0, -4.459458, 0, 0, 0, 0, 0, 0, 51.881252, 0, -6.860136, 0, 0, 0, 0, 0, 0, 51.79847, 0, -9.964464, 0, 0, 0, 0, 0, 0, 52.99881, 0, -12.654881, 0, 0, 0, 0, 0, 0, 55.10975, 0, -14.600258, 0, 0, 0, 0, 0, 0, 57.84156, 0, -15.635034, 0, 0, 0, 0, 0, 0, 60.614758, 0, -15.386687, 0, 0, 0, 0, 0, 0, 77.374054, 0, -10.0257, 0, 0, 0, 0, 0, 0, 81.26482, 0, -8.080319, 0, 0, 0, 0, 0, 0, 83.6655, 0, -5.638251, 0, 0, 0, 0, 0, 0, 85.30597, 0, -1.6285734, 0, 0, 0, 0, 0, 0, 85.388756, 0, 2.6760926, 0, 0, 0, 0, 0, 0, 84.97958, 0, 20.28206, 0, 0, 0, 0, 0, 0, 84.36377, 0, 24.154814, 0, 0, 0, 0, 0, 0, 82.91508, 0, 26.803839, 0, 0, 0, 0, 0, 0, 80.72136, 0, 29.245909, 0, 0, 0, 0, 0, 0, 76.871994, 0, 31.315462, 0, 0, 0, 0, 0, 0, 71.573944, 0, 31.977718),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 85
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kcqki"]
+albedo_color = Color(0.27, 0.27, 0.27, 1)
+roughness = 0.73
+
+[node name="RaceTrack3D" type="Node3D" unique_id=593321395]
+script = ExtResource("1_6d0ef")
+circuit_name = "Gran Premio de España"
+total_laps = 10
+base_lap_time = 85.0
+pit_wear_threshold = 15.0
+strategies = Array[ExtResource("2_oybeq")]([ExtResource("3_lkfof"), ExtResource("4_mpqbk")])
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2059757776]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 68, 0)
+script = ExtResource("2_kcqki")
+min_zoom = 1.0
+max_zoom = 20.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1740981919]
+transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
+
+[node name="TrackLayout" type="Node3D" parent="." unique_id=310826746]
+
+[node name="Track" type="Path3D" parent="TrackLayout" unique_id=1430576278]
+curve = SubResource("Curve3D_kcqki")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="TrackLayout/Track" unique_id=861912508]
+use_collision = true
+polygon = PackedVector2Array(-0.9, 0, -0.9, 0.05, 0.9, 0.05, 0.9, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 1
+path_interval = 0.2
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+material = SubResource("StandardMaterial3D_kcqki")
+
+[node name="Sectors" type="Node3D" parent="TrackLayout" unique_id=657561975]
+
+[node name="Curva 1" type="Marker3D" parent="TrackLayout/Sectors" unique_id=1714285630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.609962, 0, 31.909584)
+script = ExtResource("6_lkfof")
+speed_factor = 0.6
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Curva 2" type="Marker3D" parent="TrackLayout/Sectors" unique_id=1160509800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.819164, 0, 25.173122)
+script = ExtResource("6_lkfof")
+speed_factor = 0.7
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Curva 3" type="Marker3D" parent="TrackLayout/Sectors" unique_id=1833603200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.90125, 0, 10.636534)
+script = ExtResource("6_lkfof")
+speed_factor = 0.8
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Curva 4" type="Marker3D" parent="TrackLayout/Sectors" unique_id=894356823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.80964, 0, -19.027561)
+script = ExtResource("6_lkfof")
+speed_factor = 0.7
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Recta 1" type="Marker3D" parent="TrackLayout/Sectors" unique_id=1954797627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.819164, 0, -18.673008)
+script = ExtResource("6_lkfof")
+speed_factor = 1.1
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Recta 2" type="Marker3D" parent="TrackLayout/Sectors" unique_id=1495776089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.300625, 0, -0.11817932)
+script = ExtResource("6_lkfof")
+speed_factor = 1.1
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Recta 3" type="Marker3D" parent="TrackLayout/Sectors" unique_id=1192662380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.34643, 0, 8.981959)
+script = ExtResource("6_lkfof")
+speed_factor = 1.1
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Recta 4" type="Marker3D" parent="TrackLayout/Sectors" unique_id=1707823897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.891544, 0, 21.627613)
+script = ExtResource("6_lkfof")
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Recta 5" type="Marker3D" parent="TrackLayout/Sectors" unique_id=572742468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.318466, 0, 7.2092094)
+script = ExtResource("6_lkfof")
+speed_factor = 1.1
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Recta 6" type="Marker3D" parent="TrackLayout/Sectors" unique_id=658710808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.681938, 0, -15.482048)
+script = ExtResource("6_lkfof")
+speed_factor = 1.3
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Recta 7" type="Marker3D" parent="TrackLayout/Sectors" unique_id=894452939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.15547, 0, -15.363863)
+script = ExtResource("6_lkfof")
+speed_factor = 1.1
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Recta 8" type="Marker3D" parent="TrackLayout/Sectors" unique_id=1760610560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.56496, 0, -0.8272772)
+script = ExtResource("6_lkfof")
+speed_factor = 1.2
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Recta 9" type="Marker3D" parent="TrackLayout/Sectors" unique_id=765399337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.81024, 0, 31.673225)
+script = ExtResource("6_lkfof")
+speed_factor = 1.5
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Curva 5" type="Marker3D" parent="TrackLayout/Sectors" unique_id=214664002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.864574, 0, -0.35454655)
+script = ExtResource("6_lkfof")
+speed_factor = 0.5
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Curva 6" type="Marker3D" parent="TrackLayout/Sectors" unique_id=845711927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.8735, 0, 18.082104)
+script = ExtResource("6_lkfof")
+speed_factor = 0.9
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Curva 7" type="Marker3D" parent="TrackLayout/Sectors" unique_id=699182808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.818573, 0, 21.745796)
+script = ExtResource("6_lkfof")
+speed_factor = 0.6
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Curva 8" type="Marker3D" parent="TrackLayout/Sectors" unique_id=1666392456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7818909, 0, -13.354744)
+script = ExtResource("6_lkfof")
+speed_factor = 0.7
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Curva 9" type="Marker3D" parent="TrackLayout/Sectors" unique_id=1779130494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.70096, 0, 17.018448)
+script = ExtResource("6_lkfof")
+speed_factor = 0.5
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Curva 10" type="Marker3D" parent="TrackLayout/Sectors" unique_id=33934264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.073746, 0, 6.9728394)
+script = ExtResource("6_lkfof")
+speed_factor = 0.8
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Curva 11" type="Marker3D" parent="TrackLayout/Sectors" unique_id=896667776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.482616, 0, -2.6000328)
+script = ExtResource("6_lkfof")
+speed_factor = 0.7
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Curva 12" type="Marker3D" parent="TrackLayout/Sectors" unique_id=1073238588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.18299, 0, -9.218315)
+script = ExtResource("6_lkfof")
+speed_factor = 0.9
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Curva 13" type="Marker3D" parent="TrackLayout/Sectors" unique_id=1625298796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.85581, 0, 20.918512)
+script = ExtResource("6_lkfof")
+speed_factor = 0.9
+metadata/_custom_type_script = "uid://o7umwmgyolwx"
+
+[node name="Pitlane" type="Node3D" parent="TrackLayout" unique_id=722816205]
+
+[node name="CarsContainer" type="Node3D" parent="." unique_id=775207817]
+
+[node name="RaceHUD" parent="." unique_id=2054786298 instance=ExtResource("3_0eydo")]

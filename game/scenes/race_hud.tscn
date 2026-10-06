@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dr6qj7l8h0m5a"]
+
+[ext_resource type="Script" uid="uid://cgrgsl3vhdrxl" path="res://game/scripts/race_hud.gd" id="1_a2b3c"]
+[ext_resource type="PackedScene" uid="uid://cw1rsag13n1ce" path="res://game/scenes/driver_row.tscn" id="2_tb1xs"]
+
+[node name="RaceHUD" type="Control" unique_id=1306931059]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_a2b3c")
+driver_row_scene = ExtResource("2_tb1xs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=872831536]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 320.0
+offset_bottom = -20.0
+grow_vertical = 2
+
+[node name="LapLabel" type="Label" parent="VBoxContainer" unique_id=334207978]
+layout_mode = 2
+text = "Vuelta: 1 / 5"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" unique_id=1090350796]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1777870860]
+layout_mode = 2
+text = "Pilotos en Pista:"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=908266497]
+layout_mode = 2
+
+[node name="DriversList" type="VBoxContainer" parent="VBoxContainer" unique_id=294421535]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10

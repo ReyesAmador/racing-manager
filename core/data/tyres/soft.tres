@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TyreCompound" format=3 uid="uid://c3co3gstiws2a"]
+
+[ext_resource type="Script" uid="uid://c85edfa51fr2k" path="res://core/resources/res_tyre_compound.gd" id="1_qk3fd"]
+
+[resource]
+script = ExtResource("1_qk3fd")
+compound_name = "Blando"
+color = Color(1, 0.005488038, 0, 1)
+grip_bonus = 1.0
+wear_per_lap = 8.0
+metadata/_custom_type_script = "uid://c85edfa51fr2k"

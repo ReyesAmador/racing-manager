@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Strategy" format=3 uid="uid://b88kjpma457hn"]
+
+[ext_resource type="Script" uid="uid://r4y43ty71rb1" path="res://core/resources/res_pit_stop.gd" id="1_788f1"]
+[ext_resource type="Script" uid="uid://ci8xn0eb7haw6" path="res://core/resources/res_strategy.gd" id="2_elp2i"]
+[ext_resource type="Resource" uid="uid://bdmongm6ewtet" path="res://core/data/tyres/medium.tres" id="2_ijlku"]
+[ext_resource type="Resource" uid="uid://c3co3gstiws2a" path="res://core/data/tyres/soft.tres" id="3_yn13g"]
+
+[sub_resource type="Resource" id="Resource_ijlku"]
+script = ExtResource("1_788f1")
+lap = 4
+tyre = ExtResource("2_ijlku")
+metadata/_custom_type_script = "uid://r4y43ty71rb1"
+
+[sub_resource type="Resource" id="Resource_yn13g"]
+script = ExtResource("1_788f1")
+lap = 8
+tyre = ExtResource("3_yn13g")
+metadata/_custom_type_script = "uid://r4y43ty71rb1"
+
+[resource]
+script = ExtResource("2_elp2i")
+strategy_name = "2 paradas B-M-B"
+starting_tyre = ExtResource("3_yn13g")
+pit_stops = Array[ExtResource("1_788f1")]([SubResource("Resource_ijlku"), SubResource("Resource_yn13g")])
+metadata/_custom_type_script = "uid://ci8xn0eb7haw6"
